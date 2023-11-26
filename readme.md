@@ -27,9 +27,9 @@
 - [📂 Estrutura do Repositório](#-Estrutura-do-Repositório)
 - [⚙️ Módulos](#Rotas)
 - [🔧 Instalação](#-Instalação)
-- [🤖 Executando o daily-diet-api](#-executando-o-daily-diet-api)
-- [🧪 Testes](#-testes)
-- [📄 Licença](#-licença)
+- [🤖 Executando o daily-diet-api](#-Executando-o-daily-diet-api)
+- [🧪 Testes](#-Testes)
+- [📄 Licença](#-Licença)
 
 ---
 
@@ -233,20 +233,20 @@ cd daily-diet-api
 ► npm install
 ```
 
-### 🤖 Running daily-diet-api
+### 🤖Executando o daily-diet-api
 
 ```sh
 ► npm run dev
 ```
 
-### 🧪 Tests
+### 🧪 Testes
 ```sh
 ► npm test
 ```
 
 ---
 
-## 📄 License
+## 📄 Licença
 
 
 This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
