@@ -233,7 +233,7 @@ cd daily-diet-api
 ► npm install
 ```
 
-### 🤖Executando
+### 🤖 Executando
 
 ```sh
 ► npm run dev
