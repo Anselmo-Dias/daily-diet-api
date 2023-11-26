@@ -131,8 +131,6 @@ Uma aplicação criada com intuito de facilitar o controle da sua dieta
 
 </details>
 
----
-
 <details closed><summary>Rotas e Requisitos</summary>
 
 ## 🛣️ Rotas e Requisitos
