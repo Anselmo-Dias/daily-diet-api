@@ -133,6 +133,95 @@ Uma aplicação criada com intuito de facilitar o controle da sua dieta
 
 ---
 
+<details closed><summary>Rotas e Requisitos</summary>
+
+## 🛣️ Rotas e Requisitos
+
+### 🍲 Food
+
+#### `GET /food`
+
+Retorna todas as refeições registradas pelo usuário autenticado.
+
+**Pré-requisitos:**
+- [x] O usuário deve estar autenticado com uma sessão válida.
+
+---
+
+#### `GET /food/:id`
+
+Retorna uma refeição específica com base no ID fornecido.
+
+**Pré-requisitos:**
+- [x] O usuário deve estar autenticado com uma sessão válida.
+
+---
+
+#### `POST /food`
+
+Registra uma nova refeição com os seguintes dados no corpo da requisição:
+- `name` (string): Nome da refeição.
+- `userId` (string): ID do usuário proprietário da refeição.
+- `description` (string): Descrição da refeição.
+- `inDiet` (enum): Indica se a refeição está na dieta (`diet`) ou não (`nodiet`).
+
+**Pré-requisitos:**
+- [x] O usuário deve estar autenticado com uma sessão válida.
+
+---
+
+#### `PUT /food/:id`
+
+Atualiza uma refeição existente com os seguintes dados no corpo da requisição:
+- \`name\` (string): Novo nome da refeição.
+- \`description\` (string): Nova descrição da refeição.
+- \`inDiet\` (enum): Indica se a refeição está na dieta (\`diet\`) ou não (\`nodiet\`).
+
+**Pré-requisitos:**
+- [x] O usuário deve estar autenticado com uma sessão válida.
+
+---
+
+#### `DELETE /food/:id`
+
+Exclui uma refeição com base no ID fornecido.
+
+**Pré-requisitos:**
+- [x] O usuário deve estar autenticado com uma sessão válida.
+
+---
+
+### 📊 User
+
+#### `GET /metrics`
+
+Retorna métricas relacionadas às refeições do usuário autenticado, incluindo:
+- `quantityFood`: Quantidade total de refeições registradas.
+- `diet`: Quantidade total de refeições dentro da dieta.
+- `noDiet`: Quantidade total de refeições fora da dieta.
+- `sequenceDiet`: Melhor sequência de refeições dentro da dieta.
+
+**Pré-requisitos:**
+- [x] O usuário deve estar autenticado com uma sessão válida.
+
+---
+
+### 📝 Registro de Usuário
+
+#### `POST /register`
+
+Registra um novo usuário com os seguintes dados no corpo da requisição:
+- \`name\` (string): Nome do usuário.
+- \`email\` (string): Endereço de e-mail do usuário (deve ser único).
+- \`password\` (string): Senha do usuário.
+
+**Pré-requisitos:**
+- [ ] Não requer autenticação.
+
+---
+
+</details>
+
 ---
 
 ## 🚀 Getting Started
