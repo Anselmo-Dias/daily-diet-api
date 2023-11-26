@@ -26,12 +26,9 @@
 - [📦 Regras da Aplicação](#-Regras-da-Aplicação)
 - [📂 Estrutura do Repositório](#-Estrutura-do-Repositório)
 - [⚙️ Módulos](#Rotas)
-- [🚀 Início Rápido](#-Iniciar-aplicação)
-    - [🔧 Instalação](#-Instalação)
-    - [🤖 Executando o daily-diet-api](#-executando-o-daily-diet-api)
-    - [🧪 Testes](#-testes)
-- [🛣 Roteiro](#-Roteiro)
-- [🤝 Contribuições](#-Contribuição)
+- [🔧 Instalação](#-Instalação)
+- [🤖 Executando o daily-diet-api](#-executando-o-daily-diet-api)
+- [🧪 Testes](#-testes)
 - [📄 Licença](#-licença)
 
 ---
