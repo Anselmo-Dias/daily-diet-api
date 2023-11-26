@@ -216,6 +216,8 @@ Registra um novo usuário com os seguintes dados no corpo da requisição:
 
 </details>
 
+---
+
 ### 🔧 Instalação
 
 1. Clonar repositorio:
@@ -248,8 +250,14 @@ cd daily-diet-api
 
 ## 📄 Licença
 
+Este projeto esta sob a [MIT license](LICENSE) para mais detalhes.
+<br />
+<br />
 
-
+## :iphone: Social
+Siga - me no 
+[instagram](https://www.instagram.com/_anselmo.dev/)
+<br />
 ---
 
 [**Return**](#Top)
