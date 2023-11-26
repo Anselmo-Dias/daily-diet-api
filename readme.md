@@ -27,7 +27,7 @@
 - [📂 Estrutura do Repositório](#-Estrutura-do-Repositório)
 - [⚙️ Módulos](#Rotas)
 - [🔧 Instalação](#-Instalação)
-- [🤖 Executando o daily-diet-api](#-Executando-o-daily-diet-api)
+- [🤖 Executando o daily-diet-api](#-executando-o-daily-diet-api)
 - [🧪 Testes](#-Testes)
 - [📄 Licença](#-Licença)
 
