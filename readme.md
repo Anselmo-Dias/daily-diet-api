@@ -23,8 +23,8 @@
 ## 📖 Sumário
 - [📖 Sumário](#-sumário)
 - [📍 Visão Geral](#-visão-geral)
-- [📦 Recursos](#-recursos)
-- [📂 Estrutura do Repositório](#-estrutura-do-repositório)
+- [📦 Recursos](#-Regras-da-Aplicação)
+- [📂 Estrutura do Repositório](#-Estrutura-do-Repositório)
 - [⚙️ Módulos](#módulos)
 - [🚀 Início Rápido](#-início-rápido)
     - [🔧 Instalação](#-instalação)
@@ -221,8 +221,6 @@ Registra um novo usuário com os seguintes dados no corpo da requisição:
 ---
 
 </details>
-
----
 
 ## 🚀 Getting Started
 
