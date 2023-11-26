@@ -2,8 +2,8 @@
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>DAILY-DIET-API</h1>
-<h3>◦ HTTPStatus Exception: 401</h3>
-<h3>◦ Developed with the software and tools below.</h3>
+<h3>◦ Exceção de Status HTTP: 401</h3>
+<h3>◦ Desenvolvido com o software e as ferramentas abaixo.</h3>
 
 <p align="center">
 <img src="https://img.shields.io/badge/Vitest-6E9F18.svg?style=flat-square&logo=Vitest&logoColor=white" alt="Vitest" />
@@ -21,38 +21,59 @@
 
 ---
 
-## 📖 Table of Contents
-- [📖 Table of Contents](#-table-of-contents)
-- [📍 Overview](#-overview)
-- [📦 Features](#-features)
-- [📂 repository Structure](#-repository-structure)
-- [⚙️ Modules](#modules)
-- [🚀 Getting Started](#-getting-started)
-    - [🔧 Installation](#-installation)
-    - [🤖 Running daily-diet-api](#-running-daily-diet-api)
-    - [🧪 Tests](#-tests)
-- [🛣 Roadmap](#-roadmap)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👏 Acknowledgments](#-acknowledgments)
+## 📖 Sumário
+- [📖 Sumário](#-sumário)
+- [📍 Visão Geral](#-visão-geral)
+- [📦 Recursos](#-recursos)
+- [📂 Estrutura do Repositório](#-estrutura-do-repositório)
+- [⚙️ Módulos](#módulos)
+- [🚀 Início Rápido](#-início-rápido)
+    - [🔧 Instalação](#-instalação)
+    - [🤖 Executando o daily-diet-api](#-executando-o-daily-diet-api)
+    - [🧪 Testes](#-testes)
+- [🛣 Roteiro](#-roteiro)
+- [🤝 Contribuições](#-contribuições)
+- [📄 Licença](#-licença)
+- [👏 Reconhecimentos](#-reconhecimentos)
+
+---
+
+## 📍 Visão Geral
+
+Uma aplicação criada com intuito de facilitar o controle da sua dieta
+
+---
+
+## 📦 Regras da Aplicação
+
+### Regras da aplicação
+
+- [x] Deve ser possível criar um usuário <br/>
+- [x] Deve ser possível identificar o usuário entre as requisições <br/>
+- [x] Deve ser possível registrar uma refeição feita, com as seguintes informações: 
+
+    *As refeições devem ser relacionadas a um usuário.*
+    
+    - Nome
+    - Descrição
+    - Data e Hora
+    - Está dentro ou não da dieta
+
+- [x] Deve ser possível editar uma refeição, podendo alterar todos os dados acima <br/>
+- [x] Deve ser possível apagar uma refeição <br/>
+- [x] Deve ser possível listar todas as refeições de um usuário <br/>
+- [x] Deve ser possível visualizar uma única refeição <br/>
+- [X] Deve ser possível recuperar as métricas de um usuário <br/>
+    - Quantidade total de refeições registradas
+    - Quantidade total de refeições dentro da dieta
+    - Quantidade total de refeições fora da dieta
+    - Melhor sequência de refeições dentro da dieta
+- [x] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou
 
 ---
 
 
-## 📍 Overview
-
-HTTPStatus Exception: 401
-
----
-
-## 📦 Features
-
-HTTPStatus Exception: 401
-
----
-
-
-## 📂 Repository Structure
+## 📂 Estrutura do Repositório
 
 ```sh
 └── daily-diet-api/
@@ -83,8 +104,7 @@ HTTPStatus Exception: 401
     │   └── test/
     │       └── routes.spec.ts
     └── tsconfig.json
-
-```
+````
 
 ---
 
