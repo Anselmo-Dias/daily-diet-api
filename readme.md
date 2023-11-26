@@ -256,7 +256,6 @@ Este projeto esta sob a [MIT license](LICENSE) para mais detalhes.
 ## :iphone: Social
 - Siga - me no  [instagram](https://www.instagram.com/_anselmo.dev/)
 <br />
----
 
 [**Return**](#Top)
 
