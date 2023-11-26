@@ -219,94 +219,33 @@ Registra um novo usuário com os seguintes dados no corpo da requisição:
 
 </details>
 
-## 🚀 Iniciar aplicação
-
-***Dependencies***
-
-Please ensure you have the following dependencies installed on your system:
-
-`- ℹ️ Dependency 1`
-
-`- ℹ️ Dependency 2`
-
-`- ℹ️ ...`
-
 ### 🔧 Instalação
 
-1. Clone the daily-diet-api repository:
+1. Clonar repositorio:
 ```sh
 git clone https://github.com/Anselmo-Dias/daily-diet-api
 ```
 
-2. Change to the project directory:
+2. Mudar para o diretorio:
 ```sh
 cd daily-diet-api
 ```
 
 3. Install the dependencies:
 ```sh
-► INSERT-TEXT
+► npm install
 ```
 
 ### 🤖 Running daily-diet-api
 
 ```sh
-► INSERT-TEXT
+► npm run dev
 ```
 
 ### 🧪 Tests
 ```sh
-► INSERT-TEXT
+► npm test
 ```
-
----
-
-
-## 🛣 Roteiro
-
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Implement Y`
-> - [ ] `ℹ️ ...`
-
-
----
-
-## 🤝 Contribuição
-
-Contributions are welcome! Here are several ways you can contribute:
-
-- **[Submit Pull Requests](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-- **[Join the Discussions](https://github.com/Anselmo-Dias/daily-diet-api/discussions)**: Share your insights, provide feedback, or ask questions.
-- **[Report Issues](https://github.com/Anselmo-Dias/daily-diet-api/issues)**: Submit bugs found or log feature requests for ANSELMO-DIAS.
-
-#### *Contributing Guidelines*
-
-<details closed>
-<summary>Click to expand</summary>
-
-1. **Fork the Repository**: Start by forking the project repository to your GitHub account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a Git client.
-   ```sh
-   git clone <your-forked-repo-url>
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear and concise message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to GitHub**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-
-Once your PR is reviewed and approved, it will be merged into the main branch.
-
-</details>
 
 ---
 
