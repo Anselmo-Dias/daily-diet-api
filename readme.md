@@ -27,7 +27,7 @@
 - [📂 Estrutura do Repositório](#-Estrutura-do-Repositório)
 - [⚙️ Módulos](#Rotas)
 - [🔧 Instalação](#-Instalação)
-- [🤖 Executando o daily-diet-api](#-executando-o-daily-diet-api)
+- [🤖 Executando o daily-diet-api](#-Executando)
 - [🧪 Testes](#-Testes)
 - [📄 Licença](#-Licença)
 
@@ -233,7 +233,7 @@ cd daily-diet-api
 ► npm install
 ```
 
-### 🤖Executando o daily-diet-api
+### 🤖Executando
 
 ```sh
 ► npm run dev
