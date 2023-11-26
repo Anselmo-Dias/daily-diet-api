@@ -25,15 +25,14 @@
 - [📍 Visão Geral](#-visão-geral)
 - [📦 Recursos](#-Regras-da-Aplicação)
 - [📂 Estrutura do Repositório](#-Estrutura-do-Repositório)
-- [⚙️ Módulos](#módulos)
-- [🚀 Início Rápido](#-início-rápido)
-    - [🔧 Instalação](#-instalação)
+- [⚙️ Módulos](#Rotas)
+- [🚀 Início Rápido](#-Iniciar-aplicação)
+    - [🔧 Instalação](#-Instalação)
     - [🤖 Executando o daily-diet-api](#-executando-o-daily-diet-api)
     - [🧪 Testes](#-testes)
-- [🛣 Roteiro](#-roteiro)
-- [🤝 Contribuições](#-contribuições)
+- [🛣 Roteiro](#-Roteiro)
+- [🤝 Contribuições](#-Contribuição)
 - [📄 Licença](#-licença)
-- [👏 Reconhecimentos](#-reconhecimentos)
 
 ---
 
@@ -220,7 +219,7 @@ Registra um novo usuário com os seguintes dados no corpo da requisição:
 
 </details>
 
-## 🚀 Getting Started
+## 🚀 Iniciar aplicação
 
 ***Dependencies***
 
@@ -232,7 +231,7 @@ Please ensure you have the following dependencies installed on your system:
 
 `- ℹ️ ...`
 
-### 🔧 Installation
+### 🔧 Instalação
 
 1. Clone the daily-diet-api repository:
 ```sh
@@ -263,7 +262,7 @@ cd daily-diet-api
 ---
 
 
-## 🛣 Project Roadmap
+## 🛣 Roteiro
 
 > - [X] `ℹ️  Task 1: Implement X`
 > - [ ] `ℹ️  Task 2: Implement Y`
@@ -272,7 +271,7 @@ cd daily-diet-api
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contribuição
 
 Contributions are welcome! Here are several ways you can contribute:
 
@@ -318,11 +317,6 @@ This project is protected under the [SELECT-A-LICENSE](https://choosealicense.co
 
 ---
 
-## 👏 Acknowledgments
-
-- List any resources, contributors, inspiration, etc. here.
-
 [**Return**](#Top)
 
----
 
