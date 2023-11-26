@@ -252,11 +252,9 @@ cd daily-diet-api
 
 Este projeto esta sob a [MIT license](LICENSE) para mais detalhes.
 <br />
-<br />
 
 ## :iphone: Social
-Siga - me no 
-[instagram](https://www.instagram.com/_anselmo.dev/)
+- Siga - me no  [instagram](https://www.instagram.com/_anselmo.dev/)
 <br />
 ---
 
