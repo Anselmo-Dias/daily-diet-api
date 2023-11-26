@@ -23,7 +23,7 @@
 ## 📖 Sumário
 - [📖 Sumário](#-sumário)
 - [📍 Visão Geral](#-visão-geral)
-- [📦 Recursos](#-Regras-da-Aplicação)
+- [📦 Regras da Aplicação](#-Regras-da-Aplicação)
 - [📂 Estrutura do Repositório](#-Estrutura-do-Repositório)
 - [⚙️ Módulos](#Rotas)
 - [🚀 Início Rápido](#-Iniciar-aplicação)
