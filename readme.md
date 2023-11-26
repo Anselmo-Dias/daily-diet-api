@@ -108,133 +108,30 @@ Uma aplicação criada com intuito de facilitar o controle da sua dieta
 ---
 
 
-## ⚙️ Modules
+## ⚙️ Rotas
 
-<details closed><summary>Root</summary>
+<details closed><summary>Food</summary>
 
-| File                                                                                            | Summary                   |
+| Rota                                                                                            | Metodo                   |
 | ---                                                                                             | ---                       |
-| [.eslintrc.json](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/.eslintrc.json)       | HTTPStatus Exception: 401 |
-| [.env.example](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/.env.example)           | HTTPStatus Exception: 401 |
-| [package.json](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/package.json)           | HTTPStatus Exception: 401 |
-| [package-lock.json](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/package-lock.json) | HTTPStatus Exception: 401 |
-| [tsconfig.json](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/tsconfig.json)         | HTTPStatus Exception: 401 |
+| /food       | GET |
+| /food/:id       | GET |
+| /food       | POST |
+| /food/:id       | PUT |
+| /food/:id       | DELETE |
 
 </details>
 
-<details closed><summary>Prisma</summary>
+<details closed><summary>User</summary>
 
-| File                                                                                           | Summary                   |
-| ---                                                                                            | ---                       |
-| [schema.prisma](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/schema.prisma) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>Migrations</summary>
-
-| File                                                                                                                  | Summary                   |
-| ---                                                                                                                   | ---                       |
-| [migration_lock.toml](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/migration_lock.toml) | HTTPStatus Exception: 401 |
+| Rota                                                                                            | Metodo                   |
+| ---                                                                                             | ---                       |
+| /metrics       | GET |
+| /register       | POST |
 
 </details>
 
-<details closed><summary>20231115174617_update</summary>
-
-| File                                                                                                                            | Summary                   |
-| ---                                                                                                                             | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231115174617_update/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>20231114184947_update_table_user</summary>
-
-| File                                                                                                                                       | Summary                   |
-| ---                                                                                                                                        | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231114184947_update_table_user/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>20231114184539_update_table_user</summary>
-
-| File                                                                                                                                       | Summary                   |
-| ---                                                                                                                                        | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231114184539_update_table_user/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>20231115175434_update</summary>
-
-| File                                                                                                                            | Summary                   |
-| ---                                                                                                                             | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231115175434_update/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>20231114164214_add_password_in_table_user</summary>
-
-| File                                                                                                                                                | Summary                   |
-| ---                                                                                                                                                 | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231114164214_add_password_in_table_user/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>20231114161725_create_table</summary>
-
-| File                                                                                                                                  | Summary                   |
-| ---                                                                                                                                   | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231114161725_create_table/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>20231114162434_update_tables</summary>
-
-| File                                                                                                                                   | Summary                   |
-| ---                                                                                                                                    | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231114162434_update_tables/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>20231114181625_add_session_id_in_table_food</summary>
-
-| File                                                                                                                                                  | Summary                   |
-| ---                                                                                                                                                   | ---                       |
-| [migration.sql](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/prisma/migrations/20231114181625_add_session_id_in_table_food/migration.sql) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>Src</summary>
-
-| File                                                                                | Summary                   |
-| ---                                                                                 | ---                       |
-| [app.ts](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/src/app.ts)       | HTTPStatus Exception: 401 |
-| [server.ts](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/src/server.ts) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>Routes</summary>
-
-| File                                                                                   | Summary                   |
-| ---                                                                                    | ---                       |
-| [food.ts](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/src/routes/food.ts) | HTTPStatus Exception: 401 |
-| [user.ts](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/src/routes/user.ts) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>Middleware</summary>
-
-| File                                                                                                                       | Summary                   |
-| ---                                                                                                                        | ---                       |
-| [checkSessionIdExists.ts](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/src/middleware/checkSessionIdExists.ts) | HTTPStatus Exception: 401 |
-
-</details>
-
-<details closed><summary>Test</summary>
-
-| File                                                                                               | Summary                   |
-| ---                                                                                                | ---                       |
-| [routes.spec.ts](https://github.com/Anselmo-Dias/daily-diet-api/blob/main/src/test/routes.spec.ts) | HTTPStatus Exception: 401 |
-
-</details>
+---
 
 ---
 
