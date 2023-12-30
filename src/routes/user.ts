@@ -10,7 +10,46 @@ interface FoodDietProps {
   daysInSequence: number
 }
 
+interface User {
+  id: string
+  name: string
+  email: string
+}
+
 export async function userRoutes(app: FastifyInstance) {
+  app.post('/find', async (req, reply) => {
+    try {
+      const bodySchema = z.object({
+        email: z.string().email(),
+      })
+
+      const { email } = bodySchema.parse(req.body)
+      const userInfor = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      })
+
+      if (userInfor) {
+        let sessionId = req.cookies.sessionId
+
+        if (!sessionId) {
+          sessionId = randomUUID()
+          reply.cookie('sessionId', sessionId, {
+            path: '/',
+            maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+          })
+        }
+        return reply.send(userInfor)
+      }
+
+      return reply.send(null)
+    } catch (error) {
+      console.log(error)
+      return reply.send(error)
+    }
+  })
+
   app.get(
     '/metrics',
     { preHandler: [checkSessionIdExists] },
