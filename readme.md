@@ -2,7 +2,7 @@
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>DAILY-DIET-API</h1>
-<h3>◦ Desenvolvido com o software e as ferramentas abaixo.</h3>
+<h3> Desenvolvido com o software e as ferramentas abaixo.</h3>
 
 <p align="center">
 <img src="https://img.shields.io/badge/Vitest-6E9F18.svg?style=flat-square&logo=Vitest&logoColor=white" alt="Vitest" />
