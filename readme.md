@@ -9,7 +9,6 @@
 <img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat-square&logo=ESLint&logoColor=white" alt="ESLint" />
 <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat-square&logo=TypeScript&logoColor=white" alt="TypeScript" />
 <img src="https://img.shields.io/badge/Prisma-2D3748.svg?style=flat-square&logo=Prisma&logoColor=white" alt="Prisma" />
-<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat-square&logo=JSON&logoColor=white" alt="JSON" />
 <img src="https://img.shields.io/badge/Fastify-000000.svg?style=flat-square&logo=Fastify&logoColor=white" alt="Fastify" />
 </p>
 <img src="https://img.shields.io/github/license/Anselmo-Dias/daily-diet-api?style=flat-square&color=5D6D7E" alt="GitHub license" />
