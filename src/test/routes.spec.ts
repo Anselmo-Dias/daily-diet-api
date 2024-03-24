@@ -2,6 +2,7 @@ import { it, expect, describe, beforeAll, afterAll } from 'vitest'
 import request from 'supertest'
 import { randomInt } from 'node:crypto'
 import { app } from '../app'
+import { send } from 'node:process'
 
 beforeAll(async () => {
   await app.ready()
@@ -98,9 +99,11 @@ describe('Food Routes', () => {
       .expect(201)
 
     const cookie = createUserResponse.get('Set-Cookie')
+    const id = createUserResponse.body.id
 
     const listFoodResponse = await request(app.server)
-      .get('/food')
+      .post('/food/foods')
+      .send({ userId: id })
       .set('Cookie', cookie)
       .expect(200)
 

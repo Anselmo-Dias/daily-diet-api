@@ -13,42 +13,45 @@ interface FoodTableProps {
 }
 
 export async function foodRoutes(app: FastifyInstance) {
+  // app.get(
+  //   '/:id',
+  //   { preHandler: [checkSessionIdExists] },
+  //   async (req, reply) => {
+  //     const requestSchema = z.object({
+  //       id: z.string(),
+  //     })
+  //     const { id } = requestSchema.parse(req.params)
+  //     const food = await prisma.food.findFirst({
+  //       where: {
+  //         id,
+  //       },
+  //     })
+
+  //     if (!food) reply.status(404).send({ messgae: 'food not found' })
+
+  //     return { food }
+  //   },
+  // )
   app.get(
-    '/:id',
-    { preHandler: [checkSessionIdExists] },
-    async (req, reply) => {
-      const requestSchema = z.object({
-        id: z.string(),
-      })
-      const { id } = requestSchema.parse(req.params)
-      const food = await prisma.food.findMany({
-        where: {
-          id,
-        },
-      })
-      return { food }
-    },
-  )
-  app.post(
-    '/foods',
+    '/foods/:id',
     { preHandler: [checkSessionIdExists] },
     async (req, reply) => {
       try {
-        const bodySchema = z
+        const paramsSchema = z
           .object({
-            userId: z.string().uuid(),
+            id: z.string().uuid(),
           })
-          .safeParse(req.body)
-        if (!bodySchema.success) {
-          return reply.status(400).send({ message: 'Invalid body' })
+          .safeParse(req.params)
+        if (!paramsSchema.success) {
+          return reply.status(400).send({ message: 'Id is missing' })
         }
-        const { userId } = bodySchema.data
+        const { id } = paramsSchema.data
         const foods = await prisma.food.findMany({
           where: {
-            userId,
+            id,
           },
         })
-        return foods
+        return { foods }
       } catch (error) {
         reply.send('Error' + error)
       }
@@ -56,14 +59,22 @@ export async function foodRoutes(app: FastifyInstance) {
   )
   app.post('/', { preHandler: [checkSessionIdExists] }, async (req, reply) => {
     try {
-      const bodySchema = z.object({
-        name: z.string(),
-        userId: z.string(),
-        description: z.string(),
-        inDiet: z.enum(['diet', 'nodiet']),
-      })
+      const bodySchema = z
+        .object({
+          name: z.string(),
+          userId: z.string(),
+          description: z.string(),
+          inDiet: z.enum(['diet', 'nodiet']),
+        })
+        .safeParse(req.body)
+
       const sessionId = req.cookies.sessionId
-      const { name, userId, description, inDiet } = bodySchema.parse(req.body)
+
+      if (!bodySchema.success) {
+        return reply.status(400).send({ message: 'Missing or invalid body' })
+      }
+
+      const { name, userId, description, inDiet } = bodySchema.data
       const food = await prisma.food.create({
         data: {
           name,
@@ -73,7 +84,7 @@ export async function foodRoutes(app: FastifyInstance) {
           sessionId,
         } as FoodTableProps,
       })
-      return reply.status(201).send(food)
+      return reply.status(201).send({ food })
     } catch (error) {
       reply.send(error)
     }
@@ -83,16 +94,24 @@ export async function foodRoutes(app: FastifyInstance) {
     { preHandler: [checkSessionIdExists] },
     async (req, reply) => {
       try {
-        const bodySchema = z.object({
-          name: z.string(),
-          description: z.string(),
-          inDiet: z.enum(['diet', 'nodiet']),
-        })
-        const requestSchema = z.object({
-          id: z.string(),
-        })
-        const { id } = requestSchema.parse(req.params)
-        const { name, description, inDiet } = bodySchema.parse(req.body)
+        const bodySchema = z
+          .object({
+            name: z.string().optional(),
+            description: z.string().optional(),
+            inDiet: z.enum(['diet', 'nodiet']).optional(),
+          })
+          .safeParse(req.body)
+        const requestSchema = z
+          .object({
+            id: z.string(),
+          })
+          .safeParse(req.params)
+
+        if (!requestSchema.success || !bodySchema.success) {
+          return reply.status(400).send({ message: 'Invalid body' })
+        }
+        const { id } = requestSchema.data
+        const { name, description, inDiet } = bodySchema.data
         await prisma.food.update({
           where: {
             id,
@@ -114,10 +133,16 @@ export async function foodRoutes(app: FastifyInstance) {
     { preHandler: [checkSessionIdExists] },
     async (req, reply) => {
       try {
-        const requestSchema = z.object({
-          id: z.string(),
-        })
-        const { id } = requestSchema.parse(req.params)
+        const requestSchema = z
+          .object({
+            id: z.string(),
+          })
+          .safeParse(req.params)
+
+        if (!requestSchema.success) {
+          return reply.status(400).send({ message: 'Id is missing' })
+        }
+        const { id } = requestSchema.data
         await prisma.food.delete({
           where: { id },
         })
