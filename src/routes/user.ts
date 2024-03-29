@@ -17,35 +17,24 @@ interface User {
 }
 
 export async function userRoutes(app: FastifyInstance) {
-  app.post('/find', async (req, reply) => {
+  app.get('/:id', async (req, reply) => {
     try {
       const bodySchema = z.object({
-        email: z.string().email(),
+        id: z.string().uuid(),
       })
 
-      const { email } = bodySchema.parse(req.body)
-      const userInfor = await prisma.user.findUnique({
+      const { id } = bodySchema.parse(req.params)
+
+      const user = await prisma.user.findUnique({
         where: {
-          email,
+          id,
         },
       })
 
-      if (userInfor) {
-        let sessionId = req.cookies.sessionId
+      if (!user) reply.status(404).send({ message: 'User not found' })
 
-        if (!sessionId) {
-          sessionId = randomUUID()
-          reply.cookie('sessionId', sessionId, {
-            path: '/',
-            maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
-          })
-        }
-        return reply.send(userInfor)
-      }
-
-      return reply.send(null)
+      return reply.send({ id: user?.id, name: user?.name, email: user?.email })
     } catch (error) {
-      console.log(error)
       return reply.send(error)
     }
   })
@@ -100,7 +89,7 @@ export async function userRoutes(app: FastifyInstance) {
     },
   )
 
-  app.post('/register', async (req, reply) => {
+  app.post('/create', async (req, reply) => {
     try {
       const bodySchema = z.object({
         name: z.string(),
@@ -120,9 +109,11 @@ export async function userRoutes(app: FastifyInstance) {
 
       const { name, email, password } = bodySchema.parse(req.body)
 
-      const users = await prisma.user.findMany()
-
-      const emailExists = users.find((user) => user.email === email)
+      const emailExists = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      })
 
       if (emailExists) {
         return reply.status(400).send({ message: 'Email already exists' })
@@ -136,7 +127,9 @@ export async function userRoutes(app: FastifyInstance) {
         },
       })
 
-      return reply.status(201).send({ id: user.id, name })
+      return reply
+        .status(201)
+        .send({ id: user.id, name: user.name, email: user.email })
     } catch (error) {
       return reply.status(500).send(`unexpected error: ${error}`)
     }

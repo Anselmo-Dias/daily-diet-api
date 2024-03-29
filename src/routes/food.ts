@@ -13,25 +13,25 @@ interface FoodTableProps {
 }
 
 export async function foodRoutes(app: FastifyInstance) {
-  // app.get(
-  //   '/:id',
-  //   { preHandler: [checkSessionIdExists] },
-  //   async (req, reply) => {
-  //     const requestSchema = z.object({
-  //       id: z.string(),
-  //     })
-  //     const { id } = requestSchema.parse(req.params)
-  //     const food = await prisma.food.findFirst({
-  //       where: {
-  //         id,
-  //       },
-  //     })
+  app.get(
+    '/:id',
+    { preHandler: [checkSessionIdExists] },
+    async (req, reply) => {
+      const requestSchema = z.object({
+        id: z.string(),
+      })
+      const { id } = requestSchema.parse(req.params)
+      const food = await prisma.food.findUnique({
+        where: {
+          id,
+        },
+      })
 
-  //     if (!food) reply.status(404).send({ messgae: 'food not found' })
+      if (!food) reply.status(404).send({ message: 'food not found' })
 
-  //     return { food }
-  //   },
-  // )
+      return { food }
+    },
+  )
   app.get(
     '/foods/:id',
     { preHandler: [checkSessionIdExists] },
@@ -42,13 +42,16 @@ export async function foodRoutes(app: FastifyInstance) {
             id: z.string().uuid(),
           })
           .safeParse(req.params)
+
         if (!paramsSchema.success) {
           return reply.status(400).send({ message: 'Id is missing' })
         }
+
         const { id } = paramsSchema.data
+
         const foods = await prisma.food.findMany({
           where: {
-            id,
+            userId: id,
           },
         })
         return { foods }
@@ -101,9 +104,10 @@ export async function foodRoutes(app: FastifyInstance) {
             inDiet: z.enum(['diet', 'nodiet']).optional(),
           })
           .safeParse(req.body)
+
         const requestSchema = z
           .object({
-            id: z.string(),
+            id: z.string().uuid(),
           })
           .safeParse(req.params)
 
@@ -112,6 +116,15 @@ export async function foodRoutes(app: FastifyInstance) {
         }
         const { id } = requestSchema.data
         const { name, description, inDiet } = bodySchema.data
+
+        const foodExists = await prisma.food.findUnique({
+          where: {
+            id,
+          },
+        })
+
+        if (!foodExists) reply.status(404).send({ message: 'Food not found' })
+
         await prisma.food.update({
           where: {
             id,
@@ -122,6 +135,7 @@ export async function foodRoutes(app: FastifyInstance) {
             inDiet,
           },
         })
+
         reply.send({ message: 'updated successfully' })
       } catch (error) {
         reply.send(error)
