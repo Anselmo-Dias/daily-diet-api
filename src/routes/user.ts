@@ -39,6 +39,28 @@ export async function userRoutes(app: FastifyInstance) {
     }
   })
 
+  app.post('/', async (req, reply) => {
+    try {
+      const bodySchema = z.object({
+        email: z.string().email(),
+      })
+
+      const { email } = bodySchema.parse(req.body)
+
+      const user = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      })
+
+      if (!user) reply.status(404).send({ message: 'User not found' })
+
+      return reply.send(user)
+    } catch (error) {
+      return reply.send(error)
+    }
+  })
+
   app.get(
     '/metrics',
     { preHandler: [checkSessionIdExists] },

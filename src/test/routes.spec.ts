@@ -2,7 +2,6 @@ import { it, expect, describe, beforeAll, afterAll } from 'vitest'
 import request from 'supertest'
 import { randomInt } from 'node:crypto'
 import { app } from '../app'
-import { send } from 'node:process'
 
 beforeAll(async () => {
   await app.ready()
@@ -15,7 +14,7 @@ afterAll(async () => {
 describe('User Routes', async () => {
   it('should be to create user', async () => {
     const createUserResponse = await request(app.server)
-      .post('/user/register')
+      .post('user/register')
       .send({
         name: 'Anselmo',
         email: 'anselmo@gmail.com',
