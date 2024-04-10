@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "start": "node dist/server.js",
+    "start": "npx prisma migrate deploy && node dist/src/server.js",
     "build": "tsup src --format esm",
     "dev": "tsx --watch src/server.ts ",
     "prisma": "prisma generate",
